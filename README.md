@@ -1,10 +1,15 @@
 # easings.scss
 
-This package adds a set of CSS [`cubic-bezier`](https://codepen.io/seanseansean/pen/GgxrXw) [timing functions](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function) (also named _easings_) as Custom Properties, making your end CSS files lighter.
+This package adds a set of CSS [`cubic-bezier`](https://codepen.io/seanseansean/pen/GgxrXw) [timing functions](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function) (also named _easings_) as Custom Properties.
+
+Goals and benefits of the package:
+- lighter generated CSS;
+- shorter `cubic-bezier()` syntax;
+- code portability: same syntax as similar libraries.
 
 ## Easings list
 
-If you’re familiar with [Bourbon](https://www.bourbon.io/docs/4/#timing-functions)’s easings, they are exactly the same:
+If you’re familiar with [Bourbon](https://www.bourbon.io/docs/4/#timing-functions)’s easings, they are exactly the same. ([Other visualization](https://codepen.io/slavanossar/full/ERoaBx)).
 
 | easing | in-out | in | out |
 |--|--|--|--|
@@ -33,7 +38,7 @@ Aliases for a shorter syntax (not available in Bourbon):
 ## Installation
 
 1. `npm install easings.scss` pulls the package into your project.
-2. `@import '~easings.scss';` in a SCSS file adds the custom properties at `:root` level and make all SCSS easings variables available.
+2. `@import '~easings.scss';` in a SCSS file make all the easings available as SCSS variables in addition to adding them at [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) level.
 
 This means the `@import` statement…
 ```scss
@@ -79,9 +84,11 @@ These syntaxes all lead to the same CSS output:
 }
 ```
 
-> 💡 If you use Bourbon, no code change is required. Make sure you `@import` Bourbon **before** _easings.scss_, and you’re all set.
+> 💡 If you use Bourbon, no code change is required. Make sure you `@import` _easings.scss_ **after** _Bourbon_, and you’re all set.
 
-## Partial import
+## Options
+
+### Partial import (`$easings`)
 
 If you don’t want to import everything, write an `$easings` list before the `@import` statement:
 
@@ -90,7 +97,7 @@ $easings: 'in-out-quad', 'out-circ', 'in-out-back';
 @import '~easings.scss;
 ```
 
-This will only output the needed Custom Properties, instead of the 24 availables:
+This will only output the needed Custom Properties, instead of the 24 available:
 
 ```css
 :root {
@@ -106,33 +113,33 @@ All the 24 SCSS variables (and their aliases) remain available. In addition, the
 $in-out-cubic-value: 0.645, 0.045, 0.355, 1;
 ```
 
-## Legacy browsers
+### Legacy browsers (`$easings-legacy`)
 
-If you don’t want to output custom properties, set `$easings-legacy` to `true` **before** the `@import` statement:
+If you don’t want to output custom properties, set `$easings-legacy` to `true` before the `@import` statement:
 
 ```scss
 $easings-legacy: true;
 @import '~easings.scss;
 ```
 
-Using the legacy flag, no CSS will be output and the SCSS variables remains available and will output a `cubic-bezier` function instead of a Custom Property:
+With this legacy flag, no CSS will be generated in `:root`. SCSS variables will output a `cubic-bezier` function instead of a Custom Property:
 
-Taking this SCSS code:
+Example SCSS code:
 ```scss
 .my-class {
   transition: opacity 1.3s $ease-in-out-circ;
 }
 ```
 
-CSS output when `$easings-legacy` is `true`:
+Generated CSS:
+
 ```css
+/* with `$easings-legacy: true;` */
 .my-class {
   transition: opacity 1.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-```
 
-CSS output without `$easings-legacy`:
-```css
+/* without `$easings-legacy` */
 .my-class {
   transition: opacity 1.3s var(--in-out-circ);
 }
