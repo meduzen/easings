@@ -1,3 +1,3 @@
 $in-out-quad-value: .455, .03, .515, .955;
-$in-out-quad: bezier('in-out-quad', $in-out-quad-value);
-$ease-in-out-quad: bezier('in-out-quad', $in-out-quad-value);
+$in-out-quad: get-bezier('in-out-quad', $in-out-quad-value);
+$ease-in-out-quad: get-bezier('in-out-quad', $in-out-quad-value);

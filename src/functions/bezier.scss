@@ -1,13 +1,23 @@
 /**
- * Returns a cubic bezier timing function.
+ * RETURNS A cubic bezier TIMING FUNCTION.
 
  * Modern browsers will get a custom property, legacy browsers will get a
  * `cubic-bezier()` function.
  */
-@function bezier($name, $value) {
+@function get-bezier($name, $value) {
   @if variable-exists('easings-legacy') == false or $easings-legacy == false {
     @return var(--#{$name});
   } @else {
     @return cubic-bezier($value);
   }
+}
+
+/**
+ * ALIAS FOR THE CSS cubic-bezier FUNCTION
+ *
+ * Use:
+ * `transition-timing-function: bezier(.1, .02, 1, .7);`
+ */
+@function bezier($args...) {
+  @return #{'cubic-bezier(#{$args})'};
 }

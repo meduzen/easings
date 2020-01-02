@@ -1,3 +1,3 @@
 $in-circ-value: .6, .04, .98, .335;
-$in-circ: bezier('in-circ', $in-circ-value);
-$ease-in-circ: bezier('in-circ', $in-circ-value);
+$in-circ: get-bezier('in-circ', $in-circ-value);
+$ease-in-circ: get-bezier('in-circ', $in-circ-value);

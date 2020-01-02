@@ -7,6 +7,8 @@ Goals and benefits of the package:
 - shorter `cubic-bezier()` syntax;
 - code portability: same syntax as similar libraries.
 
+Also read: [ideas](https://github.com/meduzen/easings/issues/1) for this package.
+
 ## Easings list
 
 If you’re familiar with [Bourbon](https://www.bourbon.io/docs/4/#timing-functions)’s easings, they are exactly the same. ([Other visualization](https://codepen.io/slavanossar/full/ERoaBx)).
@@ -142,5 +144,21 @@ Generated CSS:
 /* without `$easings-legacy` */
 .my-class {
   transition: opacity 1.3s var(--in-out-circ);
+}
+```
+
+## Other easings
+
+*easings.scss* also adds a `bezier()` function that alias the CSS `cubic-bezier()` one, allowing a shorter syntax for your custom easings.
+
+```scss
+// You can now write this…
+.my-class {
+  transition-timing-function: bezier(.1, .02, 1, .7);
+}
+
+// … instead of
+.my-class {
+  transition-timing-function: cubic-bezier(.1, .02, 1, .7);
 }
 ```
