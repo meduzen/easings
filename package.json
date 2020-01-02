@@ -1,0 +1,29 @@
+{
+  "name": "easings.scss",
+  "version": "0.1.0",
+  "description": "Easings (cubic-bezier timing functions) as custom properties and SCSS variables",
+  "main": "src/easings.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css",
+    "custom properties",
+    "sass",
+    "scss",
+    "easings",
+    "motion",
+    "transition-timing-function",
+    "animation-timing-function"
+  ],
+  "homepage": "https://github.com/meduzen/easings",
+  "author": "Mehdi Merah <hi@mehdi.cc>",
+  "license": "WTFPL",
+  "repository": "github:meduzen/easings.git",
+  "bugs": {
+    "url": "https://github.com/meduzen/easings.scss/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
