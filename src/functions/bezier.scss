@@ -1,0 +1,13 @@
+/**
+ * Returns a cubic bezier timing function.
+
+ * Modern browsers will get a custom property, legacy browsers will get a
+ * `cubic-bezier()` function.
+ */
+@function bezier($name, $value) {
+  @if variable-exists('easings-legacy') == false or $easings-legacy == false {
+    @return var(--#{$name});
+  } @else {
+    @return cubic-bezier($value);
+  }
+}
