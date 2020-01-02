@@ -21,7 +21,7 @@
   "license": "WTFPL",
   "repository": "github:meduzen/easings.git",
   "bugs": {
-    "url": "https://github.com/meduzen/easings.scss/issues"
+    "url": "https://github.com/meduzen/easings/issues"
   },
   "publishConfig": {
     "access": "public"
