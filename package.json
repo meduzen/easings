@@ -1,7 +1,7 @@
 {
   "name": "easings.scss",
-  "version": "0.1.0",
-  "description": "Easings (cubic-bezier timing functions) as custom properties and SCSS variables",
+  "version": "0.2.0",
+  "description": "Easings (cubic-bezier timing functions) as custom properties and SCSS variables.",
   "main": "src/easings.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
