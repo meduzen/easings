@@ -1,0 +1,3 @@
+$in-out-quart-value: .77, 0, .175, 1;
+$in-out-quart: bezier('in-out-quart', $in-out-quart-value);
+$ease-in-out-quart: bezier('in-out-quart', $in-out-quart-value);

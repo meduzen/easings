@@ -1,0 +1,3 @@
+$out-expo-value: .19, 1, .22, 1;
+$out-expo: bezier('out-expo', $out-expo-value);
+$ease-out-expo: bezier('out-expo', $out-expo-value);

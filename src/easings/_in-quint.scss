@@ -1,0 +1,3 @@
+$in-quint-value: .755, .05, .855, .06;
+$in-quint: bezier('in-quint', $in-quint-value);
+$ease-in-quint: bezier('in-quint', $in-quint-value);

@@ -1,0 +1,3 @@
+$in-back-value: .6, -.28, .735, .045;
+$in-back: bezier('in-back', $in-back-value);
+$ease-in-back: bezier('in-back', $in-back-value);

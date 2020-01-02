@@ -1,0 +1,3 @@
+$in-quart-value: .895, .03, .685, .22;
+$in-quart: bezier('in-quart', $in-quart-value);
+$ease-in-quart: bezier('in-quart', $in-quart-value);

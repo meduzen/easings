@@ -1,0 +1,3 @@
+$in-out-cubic-value: .645, .045, .355, 1;
+$in-out-cubic: bezier('in-out-cubic', $in-out-cubic-value);
+$ease-in-out-cubic: bezier('in-out-cubic', $in-out-cubic-value);

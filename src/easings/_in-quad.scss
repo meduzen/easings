@@ -1,0 +1,3 @@
+$in-quad-value: .55, .085, .68, .53;
+$in-quad: bezier('in-quad', $in-quad-value);
+$ease-in-quad: bezier('in-quad', $in-quad-value);

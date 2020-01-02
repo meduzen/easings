@@ -1,0 +1,3 @@
+$in-cubic-value: .55, .055, .675, .19;
+$in-cubic: bezier('in-cubic', $in-cubic-value);
+$ease-in-cubic: bezier('in-cubic', $in-cubic-value);
