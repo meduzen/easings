@@ -2,6 +2,13 @@
 @import 'easings/easings';
 
 /**
+ * Providing a custom easings list.
+ */
+@if variable-exists('easings') {
+  $easings-list: $easings;
+}
+
+/**
  * Attach easings custom properties to `:root {}` if `$easings-legacy` is true
  * or doesn’t exist.
  */
