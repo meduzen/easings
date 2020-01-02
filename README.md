@@ -9,6 +9,16 @@ Goals and benefits of the package:
 
 Also read: [ideas](https://github.com/meduzen/easings/issues/1) for this package.
 
+## Summary
+
+- [Easings list](#easings-list)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Options](#options)
+  - [Partial import (`$easings`)](#partial-import-easings)
+  - [Legacy browsers (`$easings-legacy`)](#legacy-browsers-easings-legacy)
+- [Other easings](#other-easings)
+
 ## Easings list
 
 If you’re familiar with [Bourbon](https://www.bourbon.io/docs/4/#timing-functions)’s easings, they are exactly the same. ([Other visualization](https://codepen.io/slavanossar/full/ERoaBx)).
