@@ -54,7 +54,7 @@ Aliases for a shorter syntax (not available in Bourbon):
 
 This means the `@import` statement…
 ```scss
-@import '~easings.scss;
+@import '~easings.scss';
 ```
 
 … already outputs:
