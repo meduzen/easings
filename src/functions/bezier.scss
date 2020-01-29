@@ -21,3 +21,25 @@
 @function bezier($args...) {
   @return #{'cubic-bezier(#{$args})'};
 }
+
+/**
+ * REVERSE A cubic-bezier TIMING FUNCTION
+ *
+ * Use:
+ * `transition-timing-function: reverse-bezier(.1, .02, 1, .7);`
+ * `transition-timing-function: reverse-bezier($in-out-quad-value);`
+ */
+@function reverse-bezier($args...) {
+
+  // Turn single argument into 4 arguments
+  @if length($args) == 1 and length(nth($args, 1)) == 4 {
+    $args: nth($args, 1);
+  }
+
+  $x1: nth($args, 1);
+  $y1: nth($args, 2);
+  $x2: nth($args, 3);
+  $y2: nth($args, 4);
+
+  @return #{'cubic-bezier(#{1 - $x2}, #{1 - $y2}, #{1 - $x1}, #{1 - $y1})'};
+}

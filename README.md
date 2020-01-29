@@ -172,3 +172,19 @@ Generated CSS:
   transition-timing-function: cubic-bezier(.1, .02, 1, .7);
 }
 ```
+
+If you want to [reverse an easing curve](https://css-tricks.com/reversing-an-easing-curve), you can use the `reverse-bezier()` function, accepting 1 or 4 parameters.
+
+```scss
+// 4 parameters
+.my-class {
+  transition-timing-function: reverse-bezier(.1, .02, 1, .7);
+}
+
+// 1 parameter
+$my-easing-not-yet-reversed: .1, .02, 1, .7;
+
+.my-class {
+  transition-timing-function: reverse-bezier($my-easing-not-yet-reversed);
+}
+```
