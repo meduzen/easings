@@ -173,7 +173,7 @@ Generated CSS:
 }
 ```
 
-If you want to [reverse an easing curve](https://css-tricks.com/reversing-an-easing-curve), you can use the `reverse-bezier()` function, accepting 1 or 4 parameters.
+If you want to [reverse an easing curve](https://css-tricks.com/reversing-an-easing-curve), you can use the `reverse-bezier()` function (or its alias `r-bezier()`), accepting 1 or 4 parameters.
 
 ```scss
 // 4 parameters
@@ -186,5 +186,10 @@ $my-easing-not-yet-reversed: .1, .02, 1, .7;
 
 .my-class {
   transition-timing-function: reverse-bezier($my-easing-not-yet-reversed);
+}
+
+// r-bezier alias
+.my-class {
+  transition-timing-function: r-bezier(.1, .02, 1, .7);
 }
 ```
