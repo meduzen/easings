@@ -108,10 +108,10 @@ If you want to reverse a custom easing curve, you can use the `reverse-bezier()`
 
 // 1 parameter
 
-$my-easing-not-yet-reversed: .1, .02, 1, .7;
+$my-curve-not-reversed-yet: .1, .02, 1, .7;
 
 .my-class {
-  transition-timing-function: reverse-bezier($my-easing-not-yet-reversed);
+  transition-timing-function: reverse-bezier($my-curve-not-reversed-yet);
 }
 
 // r-bezier alias
