@@ -1,0 +1,46 @@
+/**
+ * RETURNS A cubic bezier TIMING FUNCTION.
+
+ * Modern browsers will get a custom property, legacy browsers will get a
+ * `cubic-bezier()` function.
+ */
+@function get-bezier($name, $value) {
+  @if variable-exists('easings-legacy') == false or $easings-legacy == false {
+    @return var(--#{$name});
+  } @else {
+    @return cubic-bezier($value);
+  }
+}
+
+/**
+ * RETURNS VALUE(S) FOR A NAMED TIMING FUNCTION.
+ */
+
+@function bezier-value($name, $coordinate) {
+  @return map-get(map-get($easings-values, $name), $coordinate);
+}
+
+@function reverse-bezier-value($name) {
+  $x1: bezier-x1($name);
+  $y1: bezier-y1($name);
+  $x2: bezier-x2($name);
+  $y2: bezier-y2($name);
+
+  @return 1 - $x2, 1 - $y2, 1 - $x1, 1 - $y1;
+}
+
+@function bezier-x1($name) {
+  @return bezier-value($name, 'x1');
+}
+
+@function bezier-y1($name) {
+  @return bezier-value($name, 'y1');
+}
+
+@function bezier-x2($name) {
+  @return bezier-value($name, 'x2');
+}
+
+@function bezier-y2($name) {
+  @return bezier-value($name, 'y2');
+}
