@@ -12,12 +12,12 @@ Also read: [ideas](https://github.com/meduzen/easings/issues/1) for this package
 ## Summary
 
 - [Easings list](#easings-list)
-- [Installation](#installation)
+  - [Reversed easings curves](#reversed-easings-curves)
 - [Usage](#usage)
-- [Options](#options)
+  - [Custom easings](#custom-easings)
+- [Installation](#installation)
   - [Partial import (`$easings`)](#partial-import-easings)
   - [Legacy browsers (`$easings-legacy`)](#legacy-browsers-easings-legacy)
-- [Other easings](#other-easings)
 
 ## Easings list
 
@@ -47,29 +47,12 @@ Aliases for a shorter syntax (not available in Bourbon):
 | Circ | `$in-out-circ`  | `$in-circ`  | `$out-circ` |
 | Back | `$in-out-back`  | `$in-back`  | `$out-back` |
 
-## Installation
+### Reversed easings curves
 
-1. `npm install easings.scss` pulls the package into your project.
-2. `@import '~easings.scss';` in a SCSS file make all the easings available as SCSS variables in addition to adding them at [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) level.
+For each of these variables, a [reversed curve](https://css-tricks.com/reversing-an-easing-curve) is available by adding the `-r` suffix to the variable name (or its alias). Examples:
 
-This means the `@import` statement…
-```scss
-@import '~easings.scss';
-```
-
-… already outputs:
-
-```css
-:root {
-  --in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
-  --out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
-  --in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  --in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
-  /* all 18 other easings… */
-  --out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-```
+- `$ease-in-out-quart-r` is the reversed curve of `$ease-in-out-quart`;
+- `$out-expo-r` is the reversed curve of `$out-expo`.
 
 ## Usage
 
@@ -98,14 +81,76 @@ These syntaxes all lead to the same CSS output:
 
 > 💡 If you use Bourbon, no code change is required. Make sure you `@import` _easings.scss_ **after** _Bourbon_, and you’re all set.
 
-## Options
+### Custom easings
+
+*easings.scss* also adds a `bezier()` function that alias the CSS `cubic-bezier()` one, allowing a shorter syntax for your custom easings.
+
+```scss
+// You can now write this…
+.my-class {
+  transition-timing-function: bezier(.1, .02, 1, .7);
+}
+
+// … instead of
+.my-class {
+  transition-timing-function: cubic-bezier(.1, .02, 1, .7);
+}
+```
+
+If you want to reverse a custom easing curve, you can use the `reverse-bezier()` function (or its alias `r-bezier()`), accepting 1 or 4 parameters.
+
+```scss
+// 4 parameters
+
+.my-class {
+  transition-timing-function: reverse-bezier(.1, .02, 1, .7);
+}
+
+// 1 parameter
+
+$my-easing-not-yet-reversed: .1, .02, 1, .7;
+
+.my-class {
+  transition-timing-function: reverse-bezier($my-easing-not-yet-reversed);
+}
+
+// r-bezier alias
+
+.my-class {
+  transition-timing-function: r-bezier(.1, .02, 1, .7);
+}
+```
+
+## Installation
+
+1. `npm install easings.scss` pulls the package into your project.
+2. `@import '~easings.scss';` in a SCSS file make all the easings available as SCSS variables in addition to adding them at [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) level.
+
+This means the `@import` statement…
+```scss
+@import '~easings.scss';
+```
+
+… already outputs:
+
+```css
+:root {
+  --in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+  --out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+  --in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  --in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  /* all 18 other easings… */
+  --out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+```
 
 ### Partial import (`$easings`)
 
 If you don’t want to import everything, write an `$easings` list before the `@import` statement:
 
 ```scss
-$easings: 'in-out-quad', 'out-circ', 'in-out-back';
+$easings: 'in-out-quad', 'in-out-quad-r', 'out-circ', 'in-out-back';
 @import '~easings.scss;
 ```
 
@@ -114,16 +159,18 @@ This will only output the needed Custom Properties, instead of the 24 available:
 ```css
 :root {
   --in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --in-out-quad-r: cubic-bezier(0.485, 0.045, 0.545, 0.97);
   --out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
   --in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 ```
 
-All the 24 SCSS variables (and their aliases) remain available. In addition, the 24 `cubic-bezier` coordinates are also available with the `-value` suffix:
-
-```scss
-$in-out-cubic-value: 0.645, 0.045, 0.355, 1;
-```
+> 💡Partial import is only impacting the generated custom properties, but all the 48 SCSS variables (and their aliases) remain available. In addition, the 48 `cubic-bezier` coordinates are also available with the `-value` suffix:
+>
+> ```scss
+> $in-out-cubic-value: 0.645, 0.045, 0.355, 1;
+> $in-out-cubic-r-value: 0.645, 0, 0.355, 0.955;
+> ```
 
 ### Legacy browsers (`$easings-legacy`)
 
@@ -154,42 +201,5 @@ Generated CSS:
 /* without `$easings-legacy` */
 .my-class {
   transition: opacity 1.3s var(--in-out-circ);
-}
-```
-
-## Other easings
-
-*easings.scss* also adds a `bezier()` function that alias the CSS `cubic-bezier()` one, allowing a shorter syntax for your custom easings.
-
-```scss
-// You can now write this…
-.my-class {
-  transition-timing-function: bezier(.1, .02, 1, .7);
-}
-
-// … instead of
-.my-class {
-  transition-timing-function: cubic-bezier(.1, .02, 1, .7);
-}
-```
-
-If you want to [reverse an easing curve](https://css-tricks.com/reversing-an-easing-curve), you can use the `reverse-bezier()` function (or its alias `r-bezier()`), accepting 1 or 4 parameters.
-
-```scss
-// 4 parameters
-.my-class {
-  transition-timing-function: reverse-bezier(.1, .02, 1, .7);
-}
-
-// 1 parameter
-$my-easing-not-yet-reversed: .1, .02, 1, .7;
-
-.my-class {
-  transition-timing-function: reverse-bezier($my-easing-not-yet-reversed);
-}
-
-// r-bezier alias
-.my-class {
-  transition-timing-function: r-bezier(.1, .02, 1, .7);
 }
 ```

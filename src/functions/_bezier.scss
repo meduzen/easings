@@ -1,18 +1,4 @@
 /**
- * RETURNS A cubic bezier TIMING FUNCTION.
-
- * Modern browsers will get a custom property, legacy browsers will get a
- * `cubic-bezier()` function.
- */
-@function get-bezier($name, $value) {
-  @if variable-exists('easings-legacy') == false or $easings-legacy == false {
-    @return var(--#{$name});
-  } @else {
-    @return cubic-bezier($value);
-  }
-}
-
-/**
  * ALIAS FOR THE CSS cubic-bezier FUNCTION
  *
  * Use:
@@ -54,4 +40,3 @@
 
   @return reverse-bezier($args);
 }
-

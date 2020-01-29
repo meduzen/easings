@@ -1,3 +1,0 @@
-$out-cubic-value: .215, .61, .355, 1;
-$out-cubic: get-bezier('out-cubic', $out-cubic-value);
-$ease-out-cubic: get-bezier('out-cubic', $out-cubic-value);

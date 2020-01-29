@@ -1,0 +1,252 @@
+/**
+ * Available variables
+ *
+ * How it works:
+ *
+ * $in-[easingName]-value: coordinates (e.g, `.47, 0, .745, .715`).
+ * $in-[easingName]-r-value: coordinates for reversed easing.
+ *
+ * $in-[easingName]: see functions/helpers.
+ * $ease-in-[easingName]: alias for previous line.
+ * $in-[easingName]-r: reverse for previous line.
+ * $ease-in-[easingName]-r: alias for previous line.
+ */
+
+// in-sine
+
+$in-sine-value: bezier-x1(in-sine), bezier-y1(in-sine), bezier-x2(in-sine), bezier-y2(in-sine);
+$in-sine-r-value: reverse-bezier-value(in-sine);
+
+$in-sine: get-bezier('in-sine', $in-sine-value);
+$ease-in-sine: $in-sine;
+$in-sine-r: get-bezier('in-sine-r', $in-sine-r-value);
+$ease-in-sine-r: $in-sine-r;
+
+// out-sine
+
+$out-sine-value: bezier-x1(out-sine), bezier-y1(out-sine), bezier-x2(out-sine), bezier-y2(out-sine);
+$out-sine-r-value: reverse-bezier-value(out-sine);
+
+$out-sine: get-bezier('out-sine', $out-sine-value);
+$ease-out-sine: $out-sine;
+$out-sine-r: get-bezier('out-sine-r', $out-sine-r-value);
+$ease-out-sine-r: $out-sine-r;
+
+// in-out-sine
+
+$in-out-sine-value: bezier-x1(in-out-sine), bezier-y1(in-out-sine), bezier-x2(in-out-sine), bezier-y2(in-out-sine);
+$in-out-sine-r-value: reverse-bezier-value(in-out-sine);
+
+$in-out-sine: get-bezier('in-out-sine', $in-out-sine-value);
+$ease-in-out-sine: $in-out-sine;
+$in-out-sine-r: get-bezier('in-out-sine-r', $in-out-sine-r-value);
+$ease-in-out-sine-r: $in-out-sine-r;
+
+// in-quad
+
+$in-quad-value: bezier-x1(in-quad), bezier-y1(in-quad), bezier-x2(in-quad), bezier-y2(in-quad);
+$in-quad-r-value: reverse-bezier-value(in-quad);
+
+$in-quad: get-bezier('in-quad', $in-quad-value);
+$ease-in-quad: $in-quad;
+$in-quad-r: get-bezier('in-quad-r', $in-quad-r-value);
+$ease-in-quad-r: $in-quad-r;
+
+// out-quad
+
+$out-quad-value: bezier-x1(out-quad), bezier-y1(out-quad), bezier-x2(out-quad), bezier-y2(out-quad);
+$out-quad-r-value: reverse-bezier-value(out-quad);
+
+$out-quad: get-bezier('out-quad', $out-quad-value);
+$ease-out-quad: $out-quad;
+$out-quad-r: get-bezier('out-quad-r', $out-quad-r-value);
+$ease-out-quad-r: $out-quad-r;
+
+// in-out-quad
+
+$in-out-quad-value: bezier-x1(in-out-quad), bezier-y1(in-out-quad), bezier-x2(in-out-quad), bezier-y2(in-out-quad);
+$in-out-quad-r-value: reverse-bezier-value(in-out-quad);
+
+$in-out-quad: get-bezier('in-out-quad', $in-out-quad-value);
+$ease-in-out-quad: $in-out-quad;
+$in-out-quad-r: get-bezier('in-out-quad-r', $in-out-quad-r-value);
+$ease-in-out-quad-r: $in-out-quad-r;
+
+// in-cubic
+
+$in-cubic-value: bezier-x1(in-cubic), bezier-y1(in-cubic), bezier-x2(in-cubic), bezier-y2(in-cubic);
+$in-cubic-r-value: reverse-bezier-value(in-cubic);
+
+$in-cubic: get-bezier('in-cubic', $in-cubic-value);
+$ease-in-cubic: $in-cubic;
+$in-cubic-r: get-bezier('in-cubic-r', $in-cubic-r-value);
+$ease-in-cubic-r: $in-cubic-r;
+
+// out-cubic
+
+$out-cubic-value: bezier-x1(out-cubic), bezier-y1(out-cubic), bezier-x2(out-cubic), bezier-y2(out-cubic);
+$out-cubic-r-value: reverse-bezier-value(out-cubic);
+
+$out-cubic: get-bezier('out-cubic', $out-cubic-value);
+$ease-out-cubic: $out-cubic;
+$out-cubic-r: get-bezier('out-cubic-r', $out-cubic-r-value);
+$ease-out-cubic-r: $out-cubic-r;
+
+// in-out-cubic
+
+$in-out-cubic-value: bezier-x1(in-out-cubic), bezier-y1(in-out-cubic), bezier-x2(in-out-cubic), bezier-y2(in-out-cubic);
+$in-out-cubic-r-value: reverse-bezier-value(in-out-cubic);
+
+$in-out-cubic: get-bezier('in-out-cubic', $in-out-cubic-value);
+$ease-in-out-cubic: $in-out-cubic;
+$in-out-cubic-r: get-bezier('in-out-cubic-r', $in-out-cubic-r-value);
+$ease-in-out-cubic-r: $in-out-cubic-r;
+
+// in-quart
+
+$in-quart-value: bezier-x1(in-quart), bezier-y1(in-quart), bezier-x2(in-quart), bezier-y2(in-quart);
+$in-quart-r-value: reverse-bezier-value(in-quart);
+
+$in-quart: get-bezier('in-quart', $in-quart-value);
+$ease-in-quart: $in-quart;
+$in-quart-r: get-bezier('in-quart-r', $in-quart-r-value);
+$ease-in-quart-r: $in-quart-r;
+
+// out-quart
+
+$out-quart-value: bezier-x1(out-quart), bezier-y1(out-quart), bezier-x2(out-quart), bezier-y2(out-quart);
+$out-quart-r-value: reverse-bezier-value(out-quart);
+
+$out-quart: get-bezier('out-quart', $out-quart-value);
+$ease-out-quart: $out-quart;
+$out-quart-r: get-bezier('out-quart-r', $out-quart-r-value);
+$ease-out-quart-r: $out-quart-r;
+
+// in-out-quart
+
+$in-out-quart-value: bezier-x1(in-out-quart), bezier-y1(in-out-quart), bezier-x2(in-out-quart), bezier-y2(in-out-quart);
+$in-out-quart-r-value: reverse-bezier-value(in-out-quart);
+
+$in-out-quart: get-bezier('in-out-quart', $in-out-quart-value);
+$ease-in-out-quart: $in-out-quart;
+$in-out-quart-r: get-bezier('in-out-quart-r', $in-out-quart-r-value);
+$ease-in-out-quart-r: $in-out-quart-r;
+
+// in-quint
+
+$in-quint-value: bezier-x1(in-quint), bezier-y1(in-quint), bezier-x2(in-quint), bezier-y2(in-quint);
+$in-quint-r-value: reverse-bezier-value(in-quint);
+
+$in-quint: get-bezier('in-quint', $in-quint-value);
+$ease-in-quint: $in-quint;
+$in-quint-r: get-bezier('in-quint-r', $in-quint-r-value);
+$ease-in-quint-r: $in-quint-r;
+
+// out-quint
+
+$out-quint-value: bezier-x1(out-quint), bezier-y1(out-quint), bezier-x2(out-quint), bezier-y2(out-quint);
+$out-quint-r-value: reverse-bezier-value(out-quint);
+
+$out-quint: get-bezier('out-quint', $out-quint-value);
+$ease-out-quint: $out-quint;
+$out-quint-r: get-bezier('out-quint-r', $out-quint-r-value);
+$ease-out-quint-r: $out-quint-r;
+
+// in-out-quint
+
+$in-out-quint-value: bezier-x1(in-out-quint), bezier-y1(in-out-quint), bezier-x2(in-out-quint), bezier-y2(in-out-quint);
+$in-out-quint-r-value: reverse-bezier-value(in-out-quint);
+
+$in-out-quint: get-bezier('in-out-quint', $in-out-quint-value);
+$ease-in-out-quint: $in-out-quint;
+$in-out-quint-r: get-bezier('in-out-quint-r', $in-out-quint-r-value);
+$ease-in-out-quint-r: $in-out-quint-r;
+
+// in-expo
+
+$in-expo-value: bezier-x1(in-expo), bezier-y1(in-expo), bezier-x2(in-expo), bezier-y2(in-expo);
+$in-expo-r-value: reverse-bezier-value(in-expo);
+
+$in-expo: get-bezier('in-expo', $in-expo-value);
+$ease-in-expo: $in-expo;
+$in-expo-r: get-bezier('in-expo-r', $in-expo-r-value);
+$ease-in-expo-r: $in-expo-r;
+
+// out-expo
+
+$out-expo-value: bezier-x1(out-expo), bezier-y1(out-expo), bezier-x2(out-expo), bezier-y2(out-expo);
+$out-expo-r-value: reverse-bezier-value(out-expo);
+
+$out-expo: get-bezier('out-expo', $out-expo-value);
+$ease-out-expo: $out-expo;
+$out-expo-r: get-bezier('out-expo-r', $out-expo-r-value);
+$ease-out-expo-r: $out-expo-r;
+
+// in-out-expo
+
+$in-out-expo-value: bezier-x1(in-out-expo), bezier-y1(in-out-expo), bezier-x2(in-out-expo), bezier-y2(in-out-expo);
+$in-out-expo-r-value: reverse-bezier-value(in-out-expo);
+
+$in-out-expo: get-bezier('in-out-expo', $in-out-expo-value);
+$ease-in-out-expo: $in-out-expo;
+$in-out-expo-r: get-bezier('in-out-expo-r', $in-out-expo-r-value);
+$ease-in-out-expo-r: $in-out-expo-r;
+
+// in-circ
+
+$in-circ-value: bezier-x1(in-circ), bezier-y1(in-circ), bezier-x2(in-circ), bezier-y2(in-circ);
+$in-circ-r-value: reverse-bezier-value(in-circ);
+$in-circ: get-bezier('in-circ', $in-circ-value);
+$ease-in-circ: $in-circ;
+$in-circ-r: get-bezier('in-circ-r', $in-circ-r-value);
+$ease-in-circ-r: $in-circ-r;
+
+// out-circ
+
+$out-circ-value: bezier-x1(out-circ), bezier-y1(out-circ), bezier-x2(out-circ), bezier-y2(out-circ);
+$out-circ-r-value: reverse-bezier-value(out-circ);
+
+$out-circ: get-bezier('out-circ', $out-circ-value);
+$ease-out-circ: $out-circ;
+$out-circ-r: get-bezier('out-circ-r', $out-circ-r-value);
+$ease-out-circ-r: $out-circ-r;
+
+// in-out-circ
+
+$in-out-circ-value: bezier-x1(in-out-circ), bezier-y1(in-out-circ), bezier-x2(in-out-circ), bezier-y2(in-out-circ);
+$in-out-circ-r-value: reverse-bezier-value(in-out-circ);
+
+$in-out-circ: get-bezier('in-out-circ', $in-out-circ-value);
+$ease-in-out-circ: $in-out-circ;
+$in-out-circ-r: get-bezier('in-out-circ-r', $in-out-circ-r-value);
+$ease-in-out-circ-r: $in-out-circ-r;
+
+// in-back
+
+$in-back-value: bezier-x1(in-back), bezier-y1(in-back), bezier-x2(in-back), bezier-y2(in-back);
+$in-back-r-value: reverse-bezier-value(in-back);
+
+$in-back: get-bezier('in-back', $in-back-value);
+$ease-in-back: $in-back;
+$in-back-r: get-bezier('in-back-r', $in-back-r-value);
+$ease-in-back-r: $in-back-r;
+
+// out-back
+
+$out-back-value: bezier-x1(out-back), bezier-y1(out-back), bezier-x2(out-back), bezier-y2(out-back);
+$out-back-r-value: reverse-bezier-value(out-back);
+
+$out-back: get-bezier('out-back', $out-back-value);
+$ease-out-back: $out-back;
+$out-back-r: get-bezier('out-back-r', $out-back-r-value);
+$ease-out-back-r: $out-back-r;
+
+// in-out-back
+
+$in-out-back-value: bezier-x1(in-out-back), bezier-y1(in-out-back), bezier-x2(in-out-back), bezier-y2(in-out-back);
+$in-out-back-r-value: reverse-bezier-value(in-out-back);
+
+$in-out-back: get-bezier('in-out-back', $in-out-back-value);
+$ease-in-out-back: $in-out-back;
+$in-out-back-r: get-bezier('in-out-back-r', $in-out-back-r-value);
+$ease-in-out-back-r: $in-out-back-r;

@@ -1,0 +1,121 @@
+/**
+ * The value associated to each easing
+ */
+$easings-map: (
+  'in-sine': $in-sine-value,
+  'in-sine-r': $in-sine-r-value,
+  'out-sine': $out-sine-value,
+  'out-sine-r': $out-sine-r-value,
+  'in-out-sine': $in-out-sine-value,
+  'in-out-sine-r': $in-out-sine-r-value,
+
+  'in-quad': $in-quad-value,
+  'in-quad-r': $in-quad-r-value,
+  'out-quad': $out-quad-value,
+  'out-quad-r': $out-quad-r-value,
+  'in-out-quad': $in-out-quad-value,
+  'in-out-quad-r': $in-out-quad-r-value,
+
+  'in-cubic': $in-cubic-value,
+  'in-cubic-r': $in-cubic-r-value,
+  'out-cubic': $out-cubic-value,
+  'out-cubic-r': $out-cubic-r-value,
+  'in-out-cubic': $in-out-cubic-value,
+  'in-out-cubic-r': $in-out-cubic-r-value,
+
+  'in-quart': $in-quart-value,
+  'in-quart-r': $in-quart-r-value,
+  'out-quart': $out-quart-value,
+  'out-quart-r': $out-quart-r-value,
+  'in-out-quart': $in-out-quart-value,
+  'in-out-quart-r': $in-out-quart-r-value,
+
+  'in-quint': $in-quint-value,
+  'in-quint-r': $in-quint-r-value,
+  'out-quint': $out-quint-value,
+  'out-quint-r': $out-quint-r-value,
+  'in-out-quint': $in-out-quint-value,
+  'in-out-quint-r': $in-out-quint-r-value,
+
+  'in-expo': $in-expo-value,
+  'in-expo-r': $in-expo-r-value,
+  'out-expo': $out-expo-value,
+  'out-expo-r': $out-expo-r-value,
+  'in-out-expo': $in-out-expo-value,
+  'in-out-expo-r': $in-out-expo-r-value,
+
+  'in-circ': $in-circ-value,
+  'in-circ-r': $in-circ-r-value,
+  'out-circ': $out-circ-value,
+  'out-circ-r': $out-circ-r-value,
+  'in-out-circ': $in-out-circ-value,
+  'in-out-circ-r': $in-out-circ-r-value,
+
+  'in-back': $in-back-value,
+  'in-back-r': $in-back-r-value,
+  'out-back': $out-back-value,
+  'out-back-r': $out-back-r-value,
+  'in-out-back': $in-out-back-value,
+  'in-out-back-r': $in-out-back-r-value,
+);
+
+/**
+ * Available easings
+ */
+$easings-list: (
+  'in-sine',
+  'in-sine-r',
+  'out-sine',
+  'out-sine-r',
+  'in-out-sine',
+  'in-out-sine-r',
+
+  'in-quad',
+  'in-quad-r',
+  'out-quad',
+  'out-quad-r',
+  'in-out-quad',
+  'in-out-quad-r',
+
+  'in-cubic',
+  'in-cubic-r',
+  'out-cubic',
+  'out-cubic-r',
+  'in-out-cubic',
+  'in-out-cubic-r',
+
+  'in-quart',
+  'in-quart-r',
+  'out-quart',
+  'out-quart-r',
+  'in-out-quart',
+  'in-out-quart-r',
+
+  'in-quint',
+  'in-quint-r',
+  'out-quint',
+  'out-quint-r',
+  'in-out-quint',
+  'in-out-quint-r',
+
+  'in-expo',
+  'in-expo-r',
+  'out-expo',
+  'out-expo-r',
+  'in-out-expo',
+  'in-out-expo-r',
+
+  'in-circ',
+  'in-circ-r',
+  'out-circ',
+  'out-circ-r',
+  'in-out-circ',
+  'in-out-circ-r',
+
+  'in-back',
+  'in-back-r',
+  'out-back',
+  'out-back-r',
+  'in-out-back',
+  'in-out-back-r',
+);

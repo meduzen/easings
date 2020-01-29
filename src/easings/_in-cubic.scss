@@ -1,3 +1,0 @@
-$in-cubic-value: .55, .055, .675, .19;
-$in-cubic: get-bezier('in-cubic', $in-cubic-value);
-$ease-in-cubic: get-bezier('in-cubic', $in-cubic-value);
