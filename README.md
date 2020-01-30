@@ -1,13 +1,12 @@
 # easings.scss
 
-This package adds a set of CSS [`cubic-bezier`](https://codepen.io/seanseansean/pen/GgxrXw) [timing functions](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function) (also named _easings_) as Custom Properties.
+_easings.scss_ adds a set of CSS [`cubic-bezier`](https://codepen.io/seanseansean/pen/GgxrXw) [timing functions](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function) (also named _easings_) as Custom Properties.
 
 Goals and benefits of the package:
 - lighter generated CSS;
 - shorter `cubic-bezier()` syntax;
+- reverse any bezier curve with `reverse-bezier()`;
 - code portability: same syntax as similar libraries.
-
-Also read: [ideas](https://github.com/meduzen/easings/issues/1) for this package.
 
 ## Summary
 
