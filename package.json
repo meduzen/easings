@@ -1,11 +1,12 @@
 {
   "name": "easings.scss",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Easings (cubic-bezier timing functions) as custom properties and SCSS variables.",
   "main": "src/easings.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": ["src"],
   "keywords": [
     "css",
     "custom properties",
