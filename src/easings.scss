@@ -1,6 +1,3 @@
-@import 'functions/functions';
-@import 'easings/easings';
-
 /**
  * Providing a custom easings list or use the default one.
  */
@@ -10,8 +7,12 @@ $easings: $easings-list !default;
  * Attach easings custom properties to `:root {}` if `$easings-legacy` is true
  * or doesn’t exist.
  */
-@if variable-exists('easings-legacy') == false or $easings-legacy == false {
+$easings-legacy: false !default;
 
+@import 'functions/functions';
+@import 'easings/easings';
+
+@if $easings-legacy == false {
   :root {
     @each $easing in $easings {
       --#{$easing}: cubic-bezier(#{map-get($easings-map, $easing)});

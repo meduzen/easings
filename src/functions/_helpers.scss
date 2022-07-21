@@ -5,7 +5,7 @@
  * `cubic-bezier()` function.
  */
 @function get-bezier($name, $value) {
-  @if variable-exists('easings-legacy') == false or $easings-legacy == false {
+  @if $easings-legacy == false {
     @return var(--#{$name});
   } @else {
     @return cubic-bezier($value);
