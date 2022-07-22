@@ -17,10 +17,9 @@ Goals and benefits of the package:
 - [Usage](#usage)
   - [Custom easings](#custom-easings)
 - [Installation](#installation)
-  - [Full import](#full-import)
-  - [Options](#options)
-    - [Partial import (`$easings`)](#partial-import-easings)
-    - [Legacy browsers (`$easings-legacy`)](#legacy-browsers-easings-legacy)
+- [Options](#options)
+  - [Partial import (`$easings`)](#partial-import-easings)
+  - [Legacy browsers (`$easings-legacy`)](#legacy-browsers-easings-legacy)
 
 ## Easings list
 
@@ -173,9 +172,9 @@ The sole `@import` or `@use` statement…
 }
 ```
 
-### Options
+## Options
 
-#### Partial import (`$easings`)
+### Partial import (`$easings`)
 
 If you don’t want to import everything, write an `$easings` list before the `@use` (or `@import`) statement:
 
@@ -205,7 +204,7 @@ This will only output the needed Custom Properties, instead of the 24 available:
 > $in-out-cubic-r-value: 0.645, 0, 0.355, 0.955;
 > ```
 
-#### Legacy browsers (`$easings-legacy`)
+### Legacy browsers (`$easings-legacy`)
 
 If you don’t want to output custom properties, set `$easings-legacy` to `true`:
 
