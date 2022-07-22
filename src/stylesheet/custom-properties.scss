@@ -1,0 +1,17 @@
+$do-not-generate-css: false !default;
+
+@use '../easings/names' as *;
+@use '../easings/map' as *;
+
+/**
+ * Providing a custom easings list or use the default one.
+ */
+$easings: $easings-list !default;
+
+@if $do-not-generate-css == false {
+  :root {
+    @each $easing in $easings {
+      --#{$easing}: cubic-bezier(#{map-get($easings-map, $easing)});
+    }
+  }
+}

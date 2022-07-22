@@ -1,7 +1,7 @@
 /**
- * The four esaings coordinates for each easing
+ * The four easings coordinates for each easing.
  */
-$easings-values: (
+ $easings-coordinates: (
   'in-sine': ('x1': .47, 'y1': 0, 'x2': .745, 'y2': .715),
   'out-sine': ('x1': .39, 'y1': .575, 'x2': .565, 'y2': 1),
   'in-out-sine': ('x1': .445, 'y1': .05, 'x2': .55, 'y2': .95),

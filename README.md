@@ -8,6 +8,8 @@ Goals and benefits of the package:
 - reverse any bezier curve with `reverse-bezier()`;
 - code portability: same syntax as similar libraries.
 
+⚠️ **`easings.scss` version `1.x` is compatible with Dart SASS while version `0.x` sticks to `node-sass`. If you’re not sure about your environment, start with the [installation section](#installation).** The installation step is the only usage difference between both versions, but if you prefer to only read the documentation for `0.x`, see [v0.31 documentation](https://github.com/meduzen/easings/tree/v0.3.1#contents).
+
 ## Summary
 
 - [Easings list](#easings-list)
@@ -122,12 +124,36 @@ $my-curve-not-reversed-yet: .1, .02, 1, .7;
 
 ## Installation
 
-1. `npm install easings.scss` pulls the package into your project.
+💡 `easings.scss` supports both the old and the new (2020) SASS specification, but aside from the installation step, the usage of the library remains the same in both spec.
+
+<details>
+
+<summary>If you’re not sure which one your project uses, this might help.</summary>
+
+- If the project uses `node-sass` **or** if you import SCSS files using `@import`, there’s a high chance you use **the old spec**.
+- If the project uses Dart SASS (`sass`) **and** if you import SCSS files using `@use` or `@forward`, you are using **the new spec**.
+- In the new spec, `@import` is deprecated and variables are not global. This is why `double.dash.scss` usage isn’t the same changes depending on the spec.
+
+</details>
+
+### Projects using Dart SASS
+
+**Dart SASS support starts at version 1.0.**
+
+- `npm install easings.scss@dart-sass` pulls the package into your project;
+- `@use 'easings.scss' as *;` in a SCSS file make all the easings available as SCSS variables in addition to adding them at [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) level.
+
+### Projects using `node-sass`
+
+1. `npm install easings.scss@0` pulls the package into your project (for now, the `@0` part isn’t needed).
 2. `@import '~easings.scss';` in a SCSS file make all the easings available as SCSS variables in addition to adding them at [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) level.
 
-This means the `@import` statement…
+### Full import
+
+This means the sole `@import` or `@use` statement…
 ```scss
-@import '~easings.scss';
+@use 'easings.scss'; // easings.scss 1.x
+@import 'easings.scss'; // easings.scss 0.x
 ```
 
 … already outputs:
@@ -146,11 +172,14 @@ This means the `@import` statement…
 
 ### Partial import (`$easings`)
 
-If you don’t want to import everything, write an `$easings` list before the `@import` statement:
+If you don’t want to import everything, write an `$easings` list before the `@use` (or `@import`) statement:
 
 ```scss
+// your minimal list of easings
 $easings: 'in-out-quad', 'in-out-quad-r', 'out-circ', 'in-out-back';
-@import '~easings.scss;
+
+@use 'easings.scss' with($easings: $easings); // easings.scss 1.x
+@import 'easings.scss'; // easings.scss 0.x
 ```
 
 This will only output the needed Custom Properties, instead of the 24 available:
@@ -173,11 +202,15 @@ This will only output the needed Custom Properties, instead of the 24 available:
 
 ### Legacy browsers (`$easings-legacy`)
 
-If you don’t want to output custom properties, set `$easings-legacy` to `true` before the `@import` statement:
+If you don’t want to output custom properties, set `$easings-legacy` to `true`:
 
 ```scss
+// easings.scss 1.x
+@use 'easings.scss' with($easings-legacy: true);
+
+// easings.scss 0.x
 $easings-legacy: true;
-@import '~easings.scss;
+@import 'easings.scss';
 ```
 
 With this legacy flag, no CSS will be generated in `:root`. SCSS variables will output a `cubic-bezier` function instead of a Custom Property:

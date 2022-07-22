@@ -1,3 +1,7 @@
+@use 'get-bezier' as *;
+@forward '../functions';
+@use '../functions' as *;
+
 /**
  * Available variables
  *
