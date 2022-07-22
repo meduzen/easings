@@ -1,0 +1,28 @@
+/**
+ * @todo: Rework directory structure. Right now it’s messy.
+ */
+
+/**
+ * Attach easings custom properties to `:root {}` if `$easings-legacy` is true
+ * or doesn’t exist.
+ */
+$easings-legacy: false !default;
+
+@forward 'easings/get-bezier' with($easings-legacy: $easings-legacy);
+@forward 'easings/variables';
+
+@use 'easings/names' as *;
+@use 'easings/map' as *;
+
+/**
+ * Providing a custom easings list or use the default one.
+ */
+$easings: $easings-list !default;
+
+ @if $easings-legacy == false {
+  :root {
+    @each $easing in $easings {
+      --#{$easing}: cubic-bezier(#{map-get($easings-map, $easing)});
+    }
+  }
+}
