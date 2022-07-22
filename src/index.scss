@@ -4,7 +4,7 @@
 
 $easings-legacy: false !default;
 
-// Setup base the bezier value getter function.
+// Setup the base bezier value getter function.
 @forward 'easings/get-bezier' with($easings-legacy: $easings-legacy);
 
 // Export variables and functions.
