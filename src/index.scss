@@ -7,10 +7,12 @@
  * or doesn’t exist.
  */
 $easings-legacy: false !default;
-
 @forward 'easings/get-bezier' with($easings-legacy: $easings-legacy);
+
+// Export variables and functions
 @forward 'easings/variables';
 
+// Add custom properties to `:root`.
 @use 'easings/names' as *;
 @use 'easings/map' as *;
 
