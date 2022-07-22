@@ -124,7 +124,7 @@ $my-curve-not-reversed-yet: .1, .02, 1, .7;
 
 ## Installation
 
-💡 `easings.scss` supports both the old and the new (2020) SASS specification, but the usage of the library varies per spec.
+💡 `easings.scss` supports both the old and the new (2020) SASS specification, but aside from the installation step, the usage of the library remains the same in both spec.
 
 <details>
 
@@ -172,10 +172,10 @@ This means the sole `@import` or `@use` statement…
 
 ### Partial import (`$easings`)
 
-If you don’t want to import everything, write an `$easings` list before the `@import` statement:
+If you don’t want to import everything, write an `$easings` list before the `@use` (or `@import`) statement:
 
 ```scss
-// declare your limited list of easings
+// your minimal list of easings
 $easings: 'in-out-quad', 'in-out-quad-r', 'out-circ', 'in-out-back';
 
 @use 'easings.scss' with($easings: $easings); // easings.scss 1.x
