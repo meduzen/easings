@@ -17,8 +17,10 @@ Goals and benefits of the package:
 - [Usage](#usage)
   - [Custom easings](#custom-easings)
 - [Installation](#installation)
-  - [Partial import (`$easings`)](#partial-import-easings)
-  - [Legacy browsers (`$easings-legacy`)](#legacy-browsers-easings-legacy)
+  - [Full import](#full-import)
+  - [Options](#options)
+    - [Partial import (`$easings`)](#partial-import-easings)
+    - [Legacy browsers (`$easings-legacy`)](#legacy-browsers-easings-legacy)
 
 ## Easings list
 
@@ -150,7 +152,8 @@ $my-curve-not-reversed-yet: .1, .02, 1, .7;
 
 ### Full import
 
-This means the sole `@import` or `@use` statement…
+The sole `@import` or `@use` statement…
+
 ```scss
 @use 'easings.scss'; // easings.scss 1.x
 @import 'easings.scss'; // easings.scss 0.x
@@ -170,7 +173,9 @@ This means the sole `@import` or `@use` statement…
 }
 ```
 
-### Partial import (`$easings`)
+### Options
+
+#### Partial import (`$easings`)
 
 If you don’t want to import everything, write an `$easings` list before the `@use` (or `@import`) statement:
 
@@ -200,7 +205,7 @@ This will only output the needed Custom Properties, instead of the 24 available:
 > $in-out-cubic-r-value: 0.645, 0, 0.355, 0.955;
 > ```
 
-### Legacy browsers (`$easings-legacy`)
+#### Legacy browsers (`$easings-legacy`)
 
 If you don’t want to output custom properties, set `$easings-legacy` to `true`:
 
