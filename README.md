@@ -8,7 +8,7 @@ Goals and benefits of the package:
 - reverse any bezier curve with `reverse-bezier()`;
 - code portability: same syntax as similar libraries.
 
-⚠️ **`easings.scss` version `1.x` is compatible with Dart SASS while version `0.x` sticks to `node-sass`. If you’re not sure about your environment, start with the [installation section](#installation).** The installation step is the only usage difference between both versions, but if you prefer to only read the documentation for `0.x`, see [v0.31 documentation](https://github.com/meduzen/easings/tree/v0.3.1#contents).
+⚠️ **`easings.scss` version `1.x` is compatible with Dart SASS while version `0.x` sticks to `node-sass`. If you’re not sure about your environment, start with the [installation section](#installation).** The installation step is the only usage difference between both versions, but if you prefer to only read the documentation for `0.x`, see [v0.3.1 documentation](https://github.com/meduzen/easings/tree/v0.3.1#contents).
 
 ## Summary
 
