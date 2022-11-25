@@ -8,7 +8,7 @@ Goals and benefits of the package:
 - reverse any bezier curve with `reverse-bezier()`;
 - code portability: same syntax as similar libraries.
 
-**Warning** `easings.scss` version `1.x` is compatible with Dart SASS while version `0.x` sticks to `node-sass`. If you’re not sure about your environment, start with the [installation section](#installation). The installation step is the only usage difference between both versions, but if you prefer to only read the documentation for `0.x`, see [v0.3.1 documentation](https://github.com/meduzen/easings/tree/v0.3.1#contents).
+⚠️ **`easings.scss` version `1.x` is compatible with Dart SASS while version `0.x` sticks to `node-sass`. If you’re not sure about your environment, start with the [installation section](#installation).** The installation step is the only usage difference between both versions, but if you prefer to only read the documentation for `0.x`, see [v0.3.1 documentation](https://github.com/meduzen/easings/tree/v0.3.1#contents).
 
 ## Summary
 
@@ -131,9 +131,9 @@ $my-curve-not-reversed-yet: .1, .02, 1, .7;
 
 <summary>If you’re not sure which one your project uses, this might help.</summary>
 
-- If the project uses `node-sass` **or** if you import SCSS files using `@import`, there’s a high chance you use **the old spec**.
+- If the project uses `node-sass` **or** if you import SCSS files using `@import`, there’s a high chance you are using **the old spec**.
 - If the project uses Dart SASS (`sass`) **and** if you import SCSS files using `@use` or `@forward`, you are using **the new spec**.
-- In the new spec, `@import` is deprecated and variables are not global. This is why `double.dash.scss` usage isn’t the same changes depending on the spec.
+- In the new spec, `@import` is deprecated and variables are not global. This is why `easings.scss` usage isn’t the same changes depending on the spec.
 
 </details>
 
