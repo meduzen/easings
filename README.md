@@ -1,11 +1,12 @@
 # easings.scss
 
-_easings.scss_ adds a set of CSS [`cubic-bezier`](https://codepen.io/seanseansean/pen/GgxrXw) [timing functions](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function) (also named _easings_) as Custom Properties.
+_easings.scss_ adds a set of CSS [`cubic-bezier`](https://codepen.io/seanseansean/pen/GgxrXw) [timing functions](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function) (also named _easings_) as [Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties).
 
-Goals and benefits of the package:
+This library brings:
+- a set of easings (and their reversed version!) as CSS custom properties and SASS variables;
 - lighter generated CSS;
-- shorter `cubic-bezier()` syntax;
-- reverse any bezier curve with `reverse-bezier()`;
+- a [shorter `cubic-bezier()`](#custom-easings) syntax;
+- reversed bezier curves with [`reverse-bezier()`](#reverse-easings);
 - code portability: same syntax as similar libraries.
 
 ⚠️ **`easings.scss` version `1.x` is compatible with Dart SASS while version `0.x` sticks to `node-sass`. If you’re not sure about your environment, start with the [installation section](#installation).** The installation step is the only usage difference between both versions, but if you prefer to only read the documentation for `0.x`, see [v0.3.1 documentation](https://github.com/meduzen/easings/tree/v0.3.1#contents).
@@ -16,6 +17,7 @@ Goals and benefits of the package:
   - [Reversed easings curves](#reversed-easings-curves)
 - [Usage](#usage)
   - [Custom easings](#custom-easings)
+  - [Reverse easings](#reverse-easings)
 - [Installation](#installation)
 - [Options](#options)
   - [Partial import (`$easings`)](#partial-import-easings)
@@ -98,6 +100,8 @@ These syntaxes all lead to the same CSS output:
   transition-timing-function: cubic-bezier(.1, .02, 1, .7);
 }
 ```
+
+#### Reverse easings
 
 If you want to reverse a custom easing curve, you can use the `reverse-bezier()` function (or its alias `r-bezier()`), accepting 1 or 4 parameters.
 
