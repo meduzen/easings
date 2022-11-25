@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "files": ["src"],
+  "files": [
+    "CHANGELOG.md",
+    "src"
+  ],
   "keywords": [
     "css",
     "custom properties",
