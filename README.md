@@ -8,7 +8,7 @@ Goals and benefits of the package:
 - reverse any bezier curve with `reverse-bezier()`;
 - code portability: same syntax as similar libraries.
 
-⚠️ **`easings.scss` version `1.x` is compatible with Dart SASS while version `0.x` sticks to `node-sass`. If you’re not sure about your environment, start with the [installation section](#installation).** The installation step is the only usage difference between both versions, but if you prefer to only read the documentation for `0.x`, see [v0.3.1 documentation](https://github.com/meduzen/easings/tree/v0.3.1#contents).
+**Warning** `easings.scss` version `1.x` is compatible with Dart SASS while version `0.x` sticks to `node-sass`. If you’re not sure about your environment, start with the [installation section](#installation). The installation step is the only usage difference between both versions, but if you prefer to only read the documentation for `0.x`, see [v0.3.1 documentation](https://github.com/meduzen/easings/tree/v0.3.1#contents).
 
 ## Summary
 
@@ -141,12 +141,12 @@ $my-curve-not-reversed-yet: .1, .02, 1, .7;
 
 **Dart SASS support starts at version 1.0.**
 
-- `npm install easings.scss@dart-sass` pulls the package into your project;
+- `npm install easings.scss` pulls the package into your project;
 - `@use 'easings.scss' as *;` in a SCSS file make all the easings available as SCSS variables in addition to adding them at [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) level.
 
 ### Projects using `node-sass`
 
-1. `npm install easings.scss@0` pulls the package into your project (for now, the `@0` part isn’t needed).
+1. `npm install easings.scss@node-sass` pulls the package into your project.
 2. `@import '~easings.scss';` in a SCSS file make all the easings available as SCSS variables in addition to adding them at [`:root`](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) level.
 
 ### Full import
